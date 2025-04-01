@@ -41,7 +41,7 @@ const ThemeToggle = () => {
     applyTheme(initialTheme)
   }, [])
 
-  const applyTheme = (newTheme) => {
+  const applyTheme = newTheme => {
     document.documentElement.setAttribute('data-theme', newTheme)
     localStorage.setItem('theme', newTheme)
   }
@@ -55,7 +55,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 radius-full bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-100 hover:bg-neutral-200 hvd:bg-neutral-700 transition-colors"
+      className="btn"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
     >
       {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
